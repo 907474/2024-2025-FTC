@@ -70,8 +70,8 @@ public class RobotAutoDriveByEncoder_Linear extends LinearOpMode {
         // Initialize the drive system variables.
         leftDriveFront = hardwareMap.get(DcMotor.class, "motor1");
         rightDriveFront = hardwareMap.get(DcMotor.class, "motor2");
-        leftDriveBack = hardwareMap.get((DcMotor.class, "motor3"));
-        rightDriveBack = hardwareMap.get((DcMotor.class, "motor3"));
+        leftDriveBack = hardwareMap.get(DcMotor.class, "motor3");
+        rightDriveBack = hardwareMap.get(DcMotor.class, "motor3");
 
 
         // To drive forward, most robots need the motor on one side to be reversed, because the axles point in opposite directions.
@@ -168,15 +168,40 @@ public class RobotAutoDriveByEncoder_Linear extends LinearOpMode {
         }
     }
 
-    public void findRoute(int currentXPositionOnMap, int currentYPositionOnMap, int desiredXPositionOnMap, int desiredYPositionOnMap) {
+    public void findRoute(int desiredXPositionOnMap, int desiredYPositionOnMap) {
 
     }
 
-    public void moveRight(){
+    public void moveRight(int inches){
 
     }
 
-    public void moveLeft(){
+    public void moveLeft(int inches){
 
+    }
+
+    public void moveForward(int inches){
+
+    }
+
+    public void moveBackward(int inches){
+
+    }
+
+    //Getters for location on the field
+    public int getXLocationOnField(){
+        return xLocationOnField;
+    }
+
+    public int getYLocationOnField(){
+        return yLocationOnField;
+    }
+    //Setters for location on the Field
+    public void setXLocationOnField(int setXLocation){
+        xLocationOnField = setXLocation;
+    }
+
+    public void setYLocationOnField(int setYLocation){
+        yLocationOnField = setYLocation;
     }
 }
