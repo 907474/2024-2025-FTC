@@ -170,37 +170,107 @@ public class RobotAutoDriveByEncoder_Linear extends LinearOpMode {
 
     public void findRoute(int desiredXPositionOnMap, int desiredYPositionOnMap) {
 
-    }
+        if(getXLocationOnField() < desiredXPositionOnMap && getYLocationOnField() < desiredYPositionOnMap){
+            
+        } else if(getXLocationOnField() > desiredXPositionOnMap && getYLocationOnField() > desiredYPositionOnMap){
 
-    public void moveRight(int inches){
+        } else if(){
 
-    }
-
-    public void moveLeft(int inches){
-
+        }
     }
 
     public void moveForward(int inches){
+        leftDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        rightDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        leftDriveBack.setDirection(DcMotor.Direction.REVERSE);
+        rightDriveBack.setDirection(DcMotor.Direction.FORWARD);
 
+        leftDriveFront.setPower(1.0);
+        rightDriveFront.setPower(1.0);
+        leftDriveBack.setPower(1.0);
+        rightDriveBack.setPower(1.0);
     }
 
     public void moveBackward(int inches){
+        leftDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        leftDriveBack.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveBack.setDirection(DcMotor.Direction.REVERSE);
 
+        leftDriveFront.setPower(1.0);
+        rightDriveFront.setPower(1.0);
+        leftDriveBack.setPower(1.0);
+        rightDriveBack.setPower(1.0);
+    }
+
+    public void moveRight(int inches){
+        leftDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        leftDriveBack.setDirection(DcMotor.Direction.REVERSE);
+        rightDriveBack.setDirection(DcMotor.Direction.FORWARD);
+
+        leftDriveFront.setPower(1.0);
+        rightDriveFront.setPower(1.0);
+        leftDriveBack.setPower(1.0);
+        rightDriveBack.setPower(1.0);
+    }
+
+    public void moveLeft(int inches){
+        leftDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        rightDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        leftDriveBack.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveBack.setDirection(DcMotor.Direction.REVERSE);
+
+        leftDriveFront.setPower(1.0);
+        rightDriveFront.setPower(1.0);
+        leftDriveBack.setPower(1.0);
+        rightDriveBack.setPower(1.0);
+    }
+
+    public void moveDiagonalTopLeft(int inches){
+        rightDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        leftDriveBack.setDirection(DcMotor.Direction.FORWARD);
+
+        rightDriveFront.setPower(1.0);
+        leftDriveBack.setPower(1.0);
+    }
+
+    public void moveDiagonalTopRight(int inches){
+        leftDriveFront.setDirection(DcMotor.Direction.FORWARD);
+        rightDriveBack.setDirection(DcMotor.Direction.FORWARD);
+
+        leftDriveFront.setPower(1.0);
+        rightDriveBack.setPower(1.0);
+    }
+
+    public void moveDiagonalBotLeft(int inches){
+        leftDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        rightDriveBack.setDirection(DcMotor.Direction.REVERSE);
+
+        leftDriveFront.setPower(1.0);
+        rightDriveBack.setPower(1.0);
+    }
+
+    public void moveDiagonalBotRight(int inches){
+        rightDriveFront.setDirection(DcMotor.Direction.REVERSE);
+        leftDriveBack.setDirection(DcMotor.Direction.REVERSE);
+
+        rightDriveFront.setPower(1.0);
+        leftDriveBack.setPower(1.0);
     }
 
     //Getters for location on the field
     public int getXLocationOnField(){
         return xLocationOnField;
     }
-
     public int getYLocationOnField(){
         return yLocationOnField;
     }
+
     //Setters for location on the Field
     public void setXLocationOnField(int setXLocation){
         xLocationOnField = setXLocation;
     }
-
     public void setYLocationOnField(int setYLocation){
         yLocationOnField = setYLocation;
     }
