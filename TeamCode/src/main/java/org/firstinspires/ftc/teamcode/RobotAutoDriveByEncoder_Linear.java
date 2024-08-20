@@ -170,12 +170,22 @@ public class RobotAutoDriveByEncoder_Linear extends LinearOpMode {
 
     public void findRoute(int desiredXPositionOnMap, int desiredYPositionOnMap) {
 
-        if(getXLocationOnField() < desiredXPositionOnMap && getYLocationOnField() < desiredYPositionOnMap){
+        if(getXLocationOnField() < desiredXPositionOnMap && getYLocationOnField() < desiredYPositionOnMap)/*Top Left*/{
             
-        } else if(getXLocationOnField() > desiredXPositionOnMap && getYLocationOnField() > desiredYPositionOnMap){
+        } else if(getXLocationOnField() > desiredXPositionOnMap && getYLocationOnField() > desiredYPositionOnMap)/*Bottom Left*/{
 
-        } else if(){
+        } else if(getXLocationOnField() < desiredXPositionOnMap && getYLocationOnField() > desiredYPositionOnMap)/*Bottom Right*/{
 
+        } else if(getXLocationOnField() > desiredXPositionOnMap && getYLocationOnField() < desiredYPositionOnMap)/*Top Right*/{
+
+        } else if(getXLocationOnField() > desiredXPositionOnMap && getYLocationOnField() == desiredYPositionOnMap)/*Left*/{
+
+        } else if(getXLocationOnField() > desiredXPositionOnMap && getYLocationOnField() == desiredYPositionOnMap)/*Right*/{
+
+        } else if(getXLocationOnField() == desiredXPositionOnMap && getYLocationOnField() < desiredYPositionOnMap)/*UP*/{
+
+        } else if(getXLocationOnField() == desiredXPositionOnMap && getYLocationOnField() > desiredYPositionOnMap)/*Down*/{
+            int moveY = desiredYPositionOnMap - getYLocationOnField();
         }
     }
 
